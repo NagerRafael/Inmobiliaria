@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin{% endblock %}
+
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="{{path('app_admin')}}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{path('app_admin_entregas')}}">Entregas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{path('app_admin_empleados')}}">Empleados</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+    <h1>Paquete index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdPaquete</th>
+                <th>Peso</th>
+                <th>Destino</th>
+                <th>Emisor</th>
+                <th>Receptor</th>
+                <th>Tipo</th>
+                <th>Condicion</th>
+                <th>Estado</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for paquete in paquetes %}
+            <tr>
+                <td>{{ paquete.idPaquete }}</td>
+                <td>{{ paquete.peso }}</td>
+                <td>{{ paquete.destino }}</td>
+                <td>{{ paquete.emisor }}</td>
+                <td>{{ paquete.receptor }}</td>
+                <td>{{ paquete.tipo }}</td>
+                <td>{{ paquete.condicion }}</td>
+                <td>{{ paquete.estado }}</td>
+                <td>
+                    <a href="{{ path('app_paquete_show', {'idPaquete': paquete.idPaquete}) }}">show</a>
+                    <a href="{{ path('app_paquete_edit', {'idPaquete': paquete.idPaquete}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_paquete_new') }}">Create new</a>
+
+{% endblock %}
