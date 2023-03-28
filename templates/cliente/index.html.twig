@@ -1,24 +1,32 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ClienteController!{% endblock %}
+{% block title %}Home Cliente{% endblock %}
 
 {% block body %}
 <div class="container">
         <div class="card-deck my-4 d-flex justify-content-center">
                     <div class="card bg-gray border border-1" style="width: 18rem;">
-                        <img src="https://w7.pngwing.com/pngs/493/247/png-transparent-computer-icons-building-neighbourhood-building-angle-building-company-thumbnail.png" class="card-img-top img-fluid rounded" alt="imagen de usuarios">
-                        <div class="card-body">
-                            <h5 class="card-title">INMUEBLES</h5>
-                            <p style="color: #808080" class="card-text">Enlistar los Inmuebles</p>
-                            <a href="{{path('app_edificio_index')}}" class="btn btn-primary">Mostrar</a>
+                        <div class="col-md-4">
+                            <img src="https://w7.pngwing.com/pngs/493/247/png-transparent-computer-icons-building-neighbourhood-building-angle-building-company-thumbnail.png" class="card-img-top img-fluid rounded" alt="imagen de usuarios">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-body">
+                                <h5 class="card-title">INMUEBLES</h5>
+                                <p style="color: #808080" class="card-text">Enlistar los Inmuebles</p>
+                                <a href="{{path('app_edificio_index')}}" class="btn btn-primary">Mostrar</a>
+                            </div>
                         </div>
                     </div>
                     <div class="card bg-gray border border-1" style="width: 18rem;">
-                        <img src="https://w7.pngwing.com/pngs/127/497/png-transparent-note-with-pen-logo-computer-icons-form-register-button-miscellaneous-angle-text.png" class="card-img-top img-fluid rounded" alt="imagen de usuarios">
-                        <div class="card-body">
-                            <h5 class="card-title">PETICIONES</h5>
-                            <p style="color: #808080" class="card-text">Enlistar las peticiones de inmuebles</p>
-                            <a href="{{path('app_peticion_index')}}" class="btn btn-primary">Mostrar</a>
+                        <div class="col-md-4">
+                            <img src="https://w7.pngwing.com/pngs/127/497/png-transparent-note-with-pen-logo-computer-icons-form-register-button-miscellaneous-angle-text.png" class="card-img-top img-fluid rounded" alt="imagen de usuarios">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-body">
+                                <h5 class="card-title">PETICIONES</h5>
+                                <p style="color: #808080" class="card-text">Enlistar las peticiones de inmuebles</p>
+                                <a href="{{path('app_peticion_index')}}" class="btn btn-primary">Mostrar</a>
+                            </div>
                         </div>
                     </div>
                 

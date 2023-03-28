@@ -1,20 +1,24 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AsesorController!{% endblock %}
+{% block title %}Home Asesor{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'R:/Documentos/SASF/PHP/Simulacion_Telconet/proyecto-28-03-2023/src/Controller/AsesorController.php'|file_link(0) }}">src/Controller/AsesorController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'R:/Documentos/SASF/PHP/Simulacion_Telconet/proyecto-28-03-2023/templates/asesor/index.html.twig'|file_link(0) }}">templates/asesor/index.html.twig</a></code></li>
-    </ul>
-</div>
+<div class="container">
+        <div class="card-deck my-4 d-flex justify-content-center">
+            
+                    <div class="card bg-gray border border-1" style="width: 18rem;">
+                        <div class="col-md-4">
+                            <img src="https://w7.pngwing.com/pngs/127/497/png-transparent-note-with-pen-logo-computer-icons-form-register-button-miscellaneous-angle-text.png" class="card-img-top img-fluid rounded" alt="imagen de usuarios">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-body">
+                                <h5 class="card-title">PETICIONES</h5>
+                                <p style="color: #808080" class="card-text">Enlistar las peticiones de inmuebles</p>
+                                <a href="{{path('app_peticion_index')}}" class="btn btn-primary">Mostrar</a>
+                            </div>
+                        </div>
+                    </div>
+                
+        </div>
+    </div>
 {% endblock %}
