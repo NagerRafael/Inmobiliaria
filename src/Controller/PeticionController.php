@@ -29,6 +29,7 @@ class PeticionController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $peticion->setCondicion('Alquiler');
             $peticion->setEstado('A');
             $peticionRepository->save($peticion, true);
 

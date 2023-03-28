@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Peticion index{% endblock %}
+{% block title %}Peticiones{% endblock %}
 
 {% block body %}
-    <h1>Peticion index</h1>
+    <h1 style="color: #808080">Lista de Peticiones</h1>
 
     <table class="table table-dark table-striped">
         <thead>
@@ -33,5 +33,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_peticion_new') }}">Create new</a>
+    <a class="btn btn-primary" href="{{ path('app_peticion_new') }}">Crear una petición</a>
 {% endblock %}

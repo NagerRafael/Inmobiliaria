@@ -37,16 +37,6 @@ class AdminController extends AbstractController
         ]);
     }
 
-    #[Route('/entregas', name: 'app_admin_entregas', methods: ['GET'])]
-    public function entregas(PaqueteRepository $paqueteRepository): Response
-    {
-        return $this->render('admin/entregas.html.twig', [
-            'paquetes' => $paqueteRepository->findAll(),
-        ]);
-    }
-
-
-
     #[Route('/registerEmployee', name: 'app_admin_registerEmployee')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, AppCustomAuthenticator $authenticator, EntityManagerInterface $entityManager): Response
     {

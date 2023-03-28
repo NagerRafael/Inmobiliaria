@@ -3,11 +3,11 @@
 {% block title %}Edit Edificio{% endblock %}
 
 {% block body %}
-    <h1>Edit Edificio</h1>
+    <h2 style="color: #808080">Edit Edificio</h2>
 
     {{ include('edificio/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('app_edificio_index') }}">back to list</a>
+    </br>
+    <a class="btn btn-info" href="{{ path('app_edificio_index') }}">back to list</a>
 
     {{ include('edificio/_delete_form.html.twig') }}
 {% endblock %}

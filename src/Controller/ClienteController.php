@@ -7,14 +7,16 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
-#[Route('/user'), IsGranted('ROLE_CLIENTE')]
+#[Route('/cliente')]
+/*, IsGranted('ROLE_CLIENTE')*/
 class ClienteController extends AbstractController
 {
-    #[Route('/cliente', name: 'app_cliente')]
+    #[Route('/', name: 'app_cliente')]
     public function index(): Response
     {
         return $this->render('cliente/index.html.twig', [
             'controller_name' => 'ClienteController',
         ]);
     }
+
 }

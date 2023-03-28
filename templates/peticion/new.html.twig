@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Peticion{% endblock %}
+{% block title %}Crear Petición{% endblock %}
 
 {% block body %}
-    <h1>Create new Peticion</h1>
+    <h2 style="color: #808080">Crear una petición</h2>
 
     {{ include('peticion/_form.html.twig') }}
 
-    <a href="{{ path('app_peticion_index') }}">back to list</a>
+    <a class="btn btn-info" href="{{ path('app_peticion_index') }}">Regresar</a>
 {% endblock %}

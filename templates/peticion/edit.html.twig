@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Peticion{% endblock %}
+{% block title %}Editar Petición{% endblock %}
 
 {% block body %}
-    <h1>Edit Peticion</h1>
+    <h1>Modificar Petición</h1>
 
     {{ include('peticion/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('app_peticion_index') }}">back to list</a>
+    <a class="btn btn-info" href="{{ path('app_peticion_index') }}">Regresar</a>
 
     {{ include('peticion/_delete_form.html.twig') }}
 {% endblock %}
