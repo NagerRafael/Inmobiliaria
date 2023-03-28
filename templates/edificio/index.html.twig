@@ -37,5 +37,8 @@
         </tbody>
     </table>
 
-    <a class="btn btn-info" href="{{ path('app_edificio_new') }}">Create new</a>
+    
+    {% if not (is_granted('ROLE_CLIENTE')) %}
+        <a class="btn btn-info" href="{{ path('app_edificio_new') }}">Crear Inmueble</a>
+    {% endif %}
 {% endblock %}
