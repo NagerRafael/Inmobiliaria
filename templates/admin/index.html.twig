@@ -3,21 +3,33 @@
 {% block title %}Admin{% endblock %}
 
 {% block body %}
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-                <a class="nav-link" href="{{path('app_admin_empleados')}}">Empleados</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{path('app_admin_entregas')}}">Entregas</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{path('app_admin_registerEmployee')}}">Registrar Empleado</a>
-            </li>
-        </ul>
+    <div class="container">
+        <div class="card-deck my-4 d-flex justify-content-center">
+                    <div class="card bg-gray border border-1" style="width: 18rem;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/122/122043.png" class="card-img-top img-fluid rounded" alt="imagen de usuarios">
+                        <div class="card-body">
+                            <h5 class="card-title">EMPLEADOS</h5>
+                            <p class="card-text">Enlistar los empleados</p>
+                            <a href="{{path('app_admin_empleados')}}" class="btn btn-primary">Mostrar</a>
+                        </div>
+                    </div>
+                    <div class="card bg-gray border border-1" style="width: 18rem;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/346/346569.png" class="card-img-top img-fluid rounded" alt="imagen de usuarios">
+                        <div class="card-body">
+                            <h5 class="card-title">REGISTRAR</h5>
+                            <p class="card-text">Ingresar al sistema un nuevo empleado</p>
+                            <a href="{{path('app_admin_registerEmployee')}}" class="btn btn-primary">Mostrar</a>
+                        </div>
+                    </div>
+                    <div class="card bg-gray border border-1" style="width: 18rem;">
+                        <img src="https://static.vecteezy.com/system/resources/previews/008/326/013/non_2x/real-estate-building-logo-icon-design-free-vector.jpg" class="card-img-top img-fluid rounded" alt="imagen de usuarios">
+                        <div class="card-body">
+                            <h5 class="card-title">EDIFICIOS</h5>
+                            <p class="card-text">Enlistar los edificios</p>
+                            <a href="{{path('app_edificio_index')}}" class="btn btn-primary">Mostrar</a>
+                        </div>      
+                    </div>
+                
+        </div>
     </div>
-</nav>
-
-
 {% endblock %}

@@ -2,31 +2,30 @@
 
 namespace App\Form;
 
-use App\Entity\Paquete;
+use App\Entity\Usuario;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class PaqueteFormType extends AbstractType
+class UsuarioType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('peso')
-            ->add('destino')
-            ->add('emisor')
-            ->add('receptor')
+            ->add('nombre')
+            ->add('apellido')
+            ->add('correo')
+            ->add('clave')
+            ->add('roles')
             ->add('tipo')
-            ->add('condicion')
             ->add('estado')
-            ->add('idRuta')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Paquete::class,
+            'data_class' => Usuario::class,
         ]);
     }
 }

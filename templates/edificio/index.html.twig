@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inmuebles{% endblock %}
+
+{% block body %}
+    <h2 style="color: #808080">Lista de Inmuebles</h2>
+
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th scope="col">IdEdificio</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Costo</th>
+                <th scope="col">Asesor</th>
+                <th scope="col">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for edificio in edificios %}
+            <tr>
+                <th scope="row">{{ edificio.idEdificio }}</td>
+                <td>{{ edificio.descripcion}}</td>
+                <td>{{ edificio.condicion }}</td>
+                <td>{{ edificio.costo}}</td>
+                <td>{{ edificio.idAsesor }}</td>
+                <td>
+                    <a class="btn btn-outline-success" href="{{ path('app_edificio_show', {'idEdificio': edificio.idEdificio}) }}">show</a>
+                    <a class="btn btn-outline-warning" href="{{ path('app_edificio_edit', {'idEdificio': edificio.idEdificio}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-info" href="{{ path('app_edificio_new') }}">Create new</a>
+{% endblock %}

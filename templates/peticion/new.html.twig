@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Peticion{% endblock %}
+
+{% block body %}
+    <h1>Create new Peticion</h1>
+
+    {{ include('peticion/_form.html.twig') }}
+
+    <a href="{{ path('app_peticion_index') }}">back to list</a>
+{% endblock %}

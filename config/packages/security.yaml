@@ -32,10 +32,9 @@ security:
 
     role_hierarchy:
         ROLE_CLIENTE: ROLE_CLIENTE
-        ROLE_SECRETARIA: ROLE_SECRETARIA
-        ROLE_REPARTIDOR: ROLE_REPARTIDOR
+        ROLE_ASESOR: ROLE_ASESOR
         ROLE_ADMIN:  ROLE_ADMIN
-        ROLE_SUPER_ADMIN: [ROLE_ALLOWED_TO_SWITCH, ROLE_ADMIN, ROLE_SECRETARIA,ROLE_REPARTIDOR ROLE_CLIENTE]
+        ROLE_SUPER_ADMIN: [ROLE_ALLOWED_TO_SWITCH, ROLE_ADMIN, ROLE_ASESOR, ROLE_CLIENTE]
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Peticion{% endblock %}
+
+{% block body %}
+    <h1>Peticion</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdPeticion</th>
+                <td>{{ peticion.idPeticion }}</td>
+            </tr>
+            <tr>
+                <th>Condicion</th>
+                <td>{{ peticion.condicion }}</td>
+            </tr>
+            <tr>
+                <th>Estado</th>
+                <td>{{ peticion.estado }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_peticion_index') }}">back to list</a>
+
+    <a href="{{ path('app_peticion_edit', {'idPeticion': peticion.idPeticion}) }}">edit</a>
+
+    {{ include('peticion/_delete_form.html.twig') }}
+{% endblock %}

@@ -17,6 +17,7 @@ CREATE TABLE "usuario" (
 
 CREATE TABLE "edificio" (
   "id_edificio" serial,
+  "descripcion" varchar(200) not null,
   "condicion" varchar(50) not null,
   "costo" numeric(6) not null,
   "id_asesor" integer,

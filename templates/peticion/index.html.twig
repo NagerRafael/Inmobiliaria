@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Peticion index{% endblock %}
+
+{% block body %}
+    <h1>Peticion index</h1>
+
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th scope="col">IdPeticion</th>
+                <th scope="col">Condicion</th>
+                <th scope="col">Estado</th>
+                <th scope="col">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for peticion in peticions %}
+            <tr>
+                <th  scope="row">{{ peticion.idPeticion }}</td>
+                <td>{{ peticion.condicion }}</td>
+                <td>{{ peticion.estado }}</td>
+                <td>
+                    <a href="{{ path('app_peticion_show', {'idPeticion': peticion.idPeticion}) }}">show</a>
+                    <a href="{{ path('app_peticion_edit', {'idPeticion': peticion.idPeticion}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_peticion_new') }}">Create new</a>
+{% endblock %}

@@ -34,7 +34,7 @@ class UsuarioController extends AbstractController
             return $this->redirectToRoute('app_usuario_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render('usuario/new.html.twig', [
+        return $this->renderForm('usuario/new.html.twig', [
             'usuario' => $usuario,
             'form' => $form,
         ]);
@@ -60,7 +60,7 @@ class UsuarioController extends AbstractController
             return $this->redirectToRoute('app_usuario_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render('usuario/edit.html.twig', [
+        return $this->renderForm('usuario/edit.html.twig', [
             'usuario' => $usuario,
             'form' => $form,
         ]);

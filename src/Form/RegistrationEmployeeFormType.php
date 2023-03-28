@@ -17,7 +17,7 @@ use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
-class ResgistrationEmployeeFormType extends AbstractType
+class RegistrationEmployeeFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -44,9 +44,9 @@ class ResgistrationEmployeeFormType extends AbstractType
             ->add('roles', ChoiceType::class, [
                 'required' => true,
                 'multiple' => false,
+                'placeholder' => ' ',
                 'choices' => [
-                    'Secretaria' => 'ROLE_SECRETARIA',
-                    'Repartidor' => 'ROLE_REPARTIDOR',
+                    'Asesor' => 'ROLE_ASESOR',
                 ],
             ])
             ->add('submit', SubmitType::class,[

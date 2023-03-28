@@ -54,11 +54,8 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
         if($this->authorizationChecker->isGranted("ROLE_CLIENTE")){
             return new RedirectResponse($this->urlGenerator->generate('app_cliente'));
         }
-        if($this->authorizationChecker->isGranted("ROLE_SECRETARIA")){
-            return new RedirectResponse($this->urlGenerator->generate('app_secretaria'));
-        }
-        if($this->authorizationChecker->isGranted("ROLE_REPARTIDOR")){
-            return new RedirectResponse($this->urlGenerator->generate('app_repartidor'));
+        if($this->authorizationChecker->isGranted("ROLE_ASESOR")){
+            return new RedirectResponse($this->urlGenerator->generate('app_admin_empleados'));
         }
         if($this->authorizationChecker->isGranted("ROLE_ADMIN")){
             return new RedirectResponse($this->urlGenerator->generate('app_admin'));

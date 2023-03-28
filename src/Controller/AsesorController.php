@@ -6,13 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class RepartidorController extends AbstractController
+class AsesorController extends AbstractController
 {
-    #[Route('/repartidor', name: 'app_repartidor')]
+    #[Route('/asesor', name: 'app_asesor')]
     public function index(): Response
     {
-        return $this->render('repartidor/index.html.twig', [
-            'controller_name' => 'RepartidorController',
+        return $this->render('asesor/index.html.twig', [
+            'controller_name' => 'AsesorController',
         ]);
     }
 }
