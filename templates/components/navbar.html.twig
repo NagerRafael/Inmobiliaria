@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                
+    {% if not (is_granted('IS_AUTHENTICATED_FULLY')) %}
+        <a style="color: #808080" class="navbar-brand active" href="/">APP</a>
+    {% elseif  (is_granted('ROLE_CLIENTE')) %}
+        <a style="color: #808080" class="navbar-brand" href="{{path('app_cliente')}}">Cliente</a>
+    {% elseif is_granted('ROLE_FACTURADOR')%}
+        <a style="color: #808080" class="navbar-brand" href="">Facturador</a>
+    {% elseif is_granted('ROLE_ADMIN')%}
+        <a style="color: #808080" class="navbar-brand" href="{{path('app_admin')}}">Administrador</a>
+    {% endif %}
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+            {% if not (is_granted('IS_AUTHENTICATED_FULLY')) %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{path('app_login')}}">Ingresar<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{path('app_register')}}">Registarse</a>
+                </li>
+            {% elseif  (is_granted('ROLE_CLIENTE')) %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{path('app_cliente')}}">Home<span class="sr-only">(current)</span></a>
+                </li>
+            
+            {% elseif is_granted('ROLE_ASESOR')%}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{path('app_asesor')}}">Home<span class="sr-only">(current)</span></a>
+                </li>
+                
+            {% elseif is_granted('ROLE_ADMIN')%}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{path('app_login')}}">Empleados<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{path('app_register')}}">Registarse</a>
+                </li>
+
+            {% endif %}
+            <li class="nav-item disable">
+                    <a class="nav-link " href="{{path('app_logout')}}">Exit</a>
+                </li>
+        </ul>
+        
+        <!--<form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>-->
+
+    </div>
+</nav>

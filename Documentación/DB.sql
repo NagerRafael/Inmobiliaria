@@ -6,7 +6,7 @@ CREATE TABLE "usuario" (
   "id_usuario" serial,
   "nombre" varchar(50)  not null,
   "apellido" varchar(50) not null,
-  "correo" varchar(100) not null,
+  "correo" varchar(100) unique not null,
   "clave" varchar(100) not null,
   "roles" json not null,
   "tipo" varchar(100) not null,
