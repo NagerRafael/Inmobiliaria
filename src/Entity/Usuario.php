@@ -12,7 +12,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Table(name="usuario")
  * @ORM\Entity(repositoryClass="App\Repository\UsuarioRepository")
  */
-#[UniqueEntity(fields: ['correo'], message: 'There is already an account with this correo')]
+#[UniqueEntity(fields: ['correo'], message: 'Ya existe una cuenta con este correo')]
 class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
 {
     /**
@@ -146,8 +146,13 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
-
+        if (empty($roles)) {
+            $roles = ['ROLE_USER'];
+        } else {
+            foreach ($this->roles as $role) {
+                $roles[] = $role;
+            }
+        }
         return array_unique($roles);
     }
 

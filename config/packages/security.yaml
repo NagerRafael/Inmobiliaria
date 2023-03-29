@@ -44,7 +44,7 @@ security:
         #- { path: ^/, roles: IS_AUTHENTICATED_FULLY }
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
-    access_denied_url: /403
+    access_denied_url: /error/403
 
 when@test:
     security:
