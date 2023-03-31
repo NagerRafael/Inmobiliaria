@@ -33,12 +33,12 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
 
     public function authenticate(Request $request): Passport
     {
-        $clave = $request->request->get('clave', '');
+        $correo = $request->request->get('correo', '');
 
-        $request->getSession()->set(Security::LAST_USERNAME, $clave);
+        $request->getSession()->set(Security::LAST_USERNAME, $correo);
 
         return new Passport(
-            new UserBadge($clave),
+            new UserBadge($correo),
             new PasswordCredentials($request->request->get('password', '')),
             [
                 new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token')),
