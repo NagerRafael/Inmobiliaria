@@ -28,8 +28,8 @@ class EdificioType extends AbstractType
             ->add('descripcion', TextType::class,[
                 'label'=> 'Descripción',
                     'attr' => [
-                        'placeholder' => 'pequeña descripcion del inmueble',
-                        'class' => 'form-control form-control-sm',
+                        'placeholder' => 'Descripcion del inmueble',
+                        'class' => 'form-control form-control-lg',
                         'required' => true                    
                     ]
             ])

@@ -3,6 +3,9 @@
 namespace App\Form;
 
 use App\Entity\Peticion;
+use App\Entity\Edificio;
+use App\Entity\Usuario;
+use App\Repository\EdificioRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -16,8 +19,6 @@ use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use App\Entity\Edificio;
-use App\Repository\EdificioRepository;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Form\FormEvent;
@@ -81,13 +82,13 @@ class PeticionType extends AbstractType
                     new NotBlank(),
                 ],
             ])
-            /*->add('condicion', TextType::class, [
-                'label' => 'Tipo',
+            ->add('condicion', TextType::class, [
+                'label' => 'Estado',
                 'required' => false,
                 'constraints' => [
                     new Length(['max' => 255]),
                 ],
-            ])*/
+            ])
         ;
         $builder->get('idEdificio')->addEventListener(
             FormEvents::POST_SUBMIT,

@@ -1,13 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 
     {% if not (is_granted('IS_AUTHENTICATED_FULLY')) %}
-        <a style="color: #F0F0F0" class="navbar-brand active">APP</a>
+        <a style="color: #F0F0F0" class="navbar-brand">APP</a>
     {% elseif  (is_granted('ROLE_CLIENTE')) %}
-        <a style="color: #F0F0F0" class="navbar-brand active">Cliente</a>
+        <a style="color: #F0F0F0" class="navbar-brand">Cliente</a>
     {% elseif is_granted('ROLE_FACTURADOR')%}
-        <a style="color: #F0F0F0" class="navbar-brand active">Facturador</a>
+        <a style="color: #F0F0F0" class="navbar-brand">Facturador</a>
     {% elseif is_granted('ROLE_ADMIN')%}
-        <a style="color: #F0F0F0" class="navbar-brand active">Administrador</a>
+        <a style="color: #F0F0F0" class="navbar-brand">Administrador</a>
     {% endif %}
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
